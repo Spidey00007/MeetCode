@@ -22,6 +22,7 @@ import {
 } from "./ui/dropdown-menu";
 import { Button } from "./ui/button";
 import EndCallButton from "./EndCallButton";
+import CodeEditor from "./CodeEditor";
 
 function MeetingRoom() {
   const router = useRouter();
@@ -48,9 +49,11 @@ function MeetingRoom() {
           maxSize={100}
           className="relative"
         >
+          {/* VIDEO LAYOUT */}
           <div className="absolute inset-0">
             {layout === "grid" ? <PaginatedGridLayout /> : <SpeakerLayout />}
 
+            {/* PARTICIPANTS LIST OVERLAY */}
             {showParticipants && (
               <div className="absolute right-0 top-0 h-full w-[300px] bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
                 <CallParticipantsList
@@ -59,6 +62,8 @@ function MeetingRoom() {
               </div>
             )}
           </div>
+
+          {/* VIDEO CONTROLS */}
 
           <div className="absolute bottom-4 left-0 right-0">
             <div className="flex flex-col items-center gap-4">
@@ -101,7 +106,7 @@ function MeetingRoom() {
         <ResizableHandle withHandle />
 
         <ResizablePanel defaultSize={65} minSize={25}>
-          <div>code editor</div>
+          <CodeEditor />
         </ResizablePanel>
       </ResizablePanelGroup>
     </div>

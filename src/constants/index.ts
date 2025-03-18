@@ -76,17 +76,24 @@ export const CODING_QUESTIONS: CodeQuestion[] = [
       },
     ],
     starterCode: {
-      javascript: `function twoSum(nums, target) {
-  // Write your solution here
-  
+      cpp: `#include <bits/stdc++.h>
+using namespace std;
+
+vector<int> twoSum(vector<int>& nums, int target) {
+    // Implement your solution here
+    return {};
 }`,
-      python: `def two_sum(nums, target):
-    # Write your solution here
-    pass`,
-      java: `class Solution {
-    public int[] twoSum(int[] nums, int target) {
-        // Write your solution here
-        
+      python: `from typing import List
+
+def two_sum(nums: List[int], target: int) -> List[int]:
+    # Implement your solution here
+    return []`,
+      java: `import java.util.*;
+
+class Solution {
+    public List<Integer> twoSum(int[] nums, int target) {
+        // Implement your solution here
+        return new ArrayList<>();
     }
 }`,
     },
@@ -113,17 +120,20 @@ export const CODING_QUESTIONS: CodeQuestion[] = [
       },
     ],
     starterCode: {
-      javascript: `function reverseString(s) {
-  // Write your solution here
-  
+      cpp: `#include <bits/stdc++.h>
+using namespace std;
+
+void reverseString(vector<char>& s) {
+    // Implement your solution here
 }`,
-      python: `def reverse_string(s):
-    # Write your solution here
+      python: `from typing import List
+
+def reverse_string(s: List[str]) -> None:
+    # Implement your solution here
     pass`,
       java: `class Solution {
     public void reverseString(char[] s) {
-        // Write your solution here
-        
+        // Implement your solution here
     }
 }`,
     },
@@ -148,17 +158,20 @@ export const CODING_QUESTIONS: CodeQuestion[] = [
       },
     ],
     starterCode: {
-      javascript: `function isPalindrome(x) {
-  // Write your solution here
-  
+      cpp: `#include <bits/stdc++.h>
+using namespace std;
+
+bool isPalindrome(int x) {
+    // Implement your solution here
+    return false;
 }`,
-      python: `def is_palindrome(x):
-    # Write your solution here
-    pass`,
+      python: `def is_palindrome(x: int) -> bool:
+    # Implement your solution here
+    return False`,
       java: `class Solution {
     public boolean isPalindrome(int x) {
-        // Write your solution here
-        
+        // Implement your solution here
+        return false;
     }
 }`,
     },
@@ -166,7 +179,7 @@ export const CODING_QUESTIONS: CodeQuestion[] = [
 ];
 
 export const LANGUAGES = [
-  { id: "javascript", name: "JavaScript", icon: "/javascript.png" },
+  { id: "cpp", name: "C++", icon: "/cpp.png" },
   { id: "python", name: "Python", icon: "/python.png" },
   { id: "java", name: "Java", icon: "/java.png" },
 ] as const;
@@ -181,7 +194,7 @@ export interface CodeQuestion {
     explanation?: string;
   }>;
   starterCode: {
-    javascript: string;
+    cpp: string;
     python: string;
     java: string;
   };
